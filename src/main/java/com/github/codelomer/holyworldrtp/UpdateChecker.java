@@ -37,7 +37,7 @@ public class UpdateChecker {
                 if(matcher.find()){
                     String latestVersion = matcher.group(1);
                     if(!latestVersion.equalsIgnoreCase(CURRENT_VERSION)){
-                        BukkitLogger.logError("The current version of the plugin is outdated, please update it. Download link -");
+                        BukkitLogger.logError("The current version of the plugin is outdated, please update it.  Download site - https://spigotmc.ru/");
                     }
                 }
             }catch (IOException e){
