@@ -25,6 +25,7 @@ public final class HolyWorldRtp extends JavaPlugin {
         Metrics metrics = new Metrics(this, 22168);
         registerUsePluginMetrics(metrics);
         registerMinecraftVersionMetrics(metrics);
+        if(configFactory.getGeneralConfig().isCheckUpdates()) new UpdateChecker(this,"CodeLomer","HolyWorldRtp").checkUpdate();
     }
 
     @Override

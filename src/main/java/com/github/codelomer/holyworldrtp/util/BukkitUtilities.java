@@ -60,9 +60,7 @@ public final class BukkitUtilities {
             } else {
                 throw new IllegalArgumentException("Не удалось определить версию Minecraft по Bukkit.getVersion(): " + bukkitGetVersionOutput);
             }
-
         }
     }
-
 }
 
