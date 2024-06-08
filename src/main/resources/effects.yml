@@ -1,0 +1,24 @@
+Rtp:
+  BLINDNESS:
+    level: 2
+    time: 2
+
+Custom-rtp:
+  long:
+    BLINDNESS:
+      level: 2
+      time: 2
+  small:
+    BLINDNESS:
+      level: 2
+      time: 2
+
+Player-rtp:
+  BLINDNESS:
+    level: 2
+    time: 2
+
+Base-rtp:
+  BLINDNESS:
+    level: 2
+    time: 2

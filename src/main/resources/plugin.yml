@@ -1,0 +1,24 @@
+name: HolyWorldRtp
+version: '${project.version}'
+main: com.github.codelomer.holyworldrtp.HolyWorldRtp
+api-version: '1.16'
+
+website: https://vk.com/plugincrafting
+depend: [ConfigProtectionAPI]
+softdepend: [WorldGuard, ProtectionStones]
+
+commands:
+  rtp:
+    description: "команда для случайной телепортации"
+
+permissions:
+  holyrtp.standard.default:
+    default: op
+  holyrtp.custom.long.default:
+    default: op
+  holy.base.rtp:
+    default: op
+  holy.player.rtp:
+    default: op
+  holy.rtp.reload:
+    default: op

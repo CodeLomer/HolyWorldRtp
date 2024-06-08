@@ -1,0 +1,17 @@
+Rtp:
+  delay:
+    enable: true
+    text: "§bТелепортация"
+    subtext: "§fчерез §b{SEC} §fсекунд..."
+    fadeIn: 30
+    state: 60
+    fadeOut: 30
+
+Player-rtp:
+  warning:
+    enable: true
+    text: "§cОсторожно!"
+    subtext: "§fрядом может быть §cигрок..."
+    fadeIn: 30
+    state: 60
+    fadeOut: 30

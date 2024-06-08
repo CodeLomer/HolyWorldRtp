@@ -1,0 +1,189 @@
+# проверка обновлений плагина
+Check-update: true
+
+# обычный стандартный rtp
+Rtp:
+  # мир где не будет задержек и откатов команд (обычно данный мир это спавн)
+  # "" - означает отсутствие такого мира
+  first-world: ""
+
+  # параметры поиска. Думаю смысл объяснять нету
+  min-radius: 10
+  max-radius: 2000
+  y-max: 120
+  world: "world"
+
+  # откат команды после ее выполнения в секундах
+  cooldown: 10
+
+  # неуязвимость после телепортации в секундах
+  invulnerability: 2
+
+  # количество попыток поиска.
+  try-find: 25
+
+  # включить проверку движения перед телепортацией
+  check-move: true
+
+  # список запрещенных блоков куда игрок не сможет телепортироваться
+  block-list:
+    - AIR
+    - LAVA
+    - WATER
+
+  # список миров, где команда не может быть использована
+  world-list:
+    - "world_nether"
+
+  # настройка задержек перед телепортацией в секундах для каждых групп
+  # приоритет разрешений идет сверху вниз
+  # формат разрешения - holyrtp.standard.<группа>
+
+  delay:
+    KING: 0
+    PHANTOM: 0
+    ELDER: 5
+    OVERLOAD: 5
+    GLADIATOR: 5
+    MASTER: 5
+    PALADIN: 5
+    HOLY: 5
+    default: 5
+
+
+# секция где можно создавать свои разновидности rtp команд
+Custom-rtp:
+
+  # 1 пример
+  long:
+
+    # центры точки телепортации
+    center-x: 0
+    center-z: 0
+
+    min-radius: 2000
+    max-radius: 3000
+    y-max: 120
+    world: "world"
+
+    try-find: 25
+    invulnerability: 2
+
+    block-list:
+      - AIR
+      - LAVA
+      - WATER
+
+    world-list:
+      - "world_nether"
+
+
+    # настройка откатов команды после ее использования в секундах для каждых групп
+    # приоритет разрешений идет сверху вниз
+    # формат разрешения - holyrtp.custom.<тип rtp>.<группа>
+    cooldown:
+      KING: 30
+      PHANTOM: 30
+      ELDER: 60
+      OVERLOAD: 60
+      GLADIATOR: 60
+      MASTER: 60
+      PALADIN: 60
+      HOLY: 60
+      default: 60
+
+  # 2 пример
+  small:
+    center-x: 0
+    center-z: 0
+
+    min-radius: 500
+    max-radius: 1500
+    y-max: 120
+    world: "world"
+
+    try-find: 25
+    invulnerability: 2
+
+    block-list:
+      - AIR
+      - LAVA
+      - WATER
+
+    world-list:
+      - "world_nether"
+
+    cooldown:
+      KING: 5
+      PHANTOM: 5
+      ELDER: 10
+      OVERLOAD: 10
+      GLADIATOR: 10
+      MASTER: 10
+      PALADIN: 10
+      HOLY: 10
+      default: 10
+
+
+# телепортация к игроку
+Player-rtp:
+  # кулдаун при старте сервера  перед использованием команды
+  first-cooldown: 86400 # в секундах
+
+  min-radius: 10
+  max-radius: 110
+  y-max: 120
+
+  cooldown: 60
+  try-find: 25
+  invulnerability: 2
+
+  # минимальное кол-во игроков на сервере которое должно быть для работы команды (минимум 2)
+  min-players-in-server: 2
+
+
+  block-list:
+    - AIR
+    - LAVA
+    - WATER
+
+  # список миров, где поиск будет происходить
+  world-list:
+    - world
+    - world_the_end
+
+# телепортация к базам
+# необходимые зависимости - worldGuard и worldEdit
+Base-rtp:
+  first-cooldown: 86400
+
+  min-radius: 10
+  max-radius: 110
+  y-max: 120
+
+  cooldown: 60
+  try-find: 25
+  invulnerability: 2
+
+  block-list:
+    - AIR
+    - LAVA
+    - WATER
+
+
+  # список миров, где поиск будет происходить
+  world-list:
+    - world
+    - world_the_end
+    - world_nether
+
+  # плагин поддерживает ProtectionStones
+  protection-stones:
+    # true - поиск будет происходить по блокам указанном в blocks секции
+    # false - будет происходить поиск по обычным регионам из worldGuard
+    enable: true
+    blocks:
+      - diamond_block
+      - emerald_ore
+      - ancient_debris
+      - red_mushroom_block
