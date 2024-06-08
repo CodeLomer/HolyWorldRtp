@@ -14,5 +14,3 @@ HolyWorldRtp is a plugin that provides random teleportation functions such as:
 - [Issue Tracker](https://github.com/CodeLomer/HolyWorldRtp/issues)
 - [VK group](https://vk.com/plugincrafting)
 
-## Quick links
-- [VK group](https://vk.com/plugincrafting)
