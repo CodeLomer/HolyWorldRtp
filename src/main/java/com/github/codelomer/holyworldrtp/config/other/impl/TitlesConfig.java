@@ -31,7 +31,7 @@ public class TitlesConfig extends PluginConfig {
         int fadeIn = configChecker.checkInt(new ConfigNumberParams<Integer>(section, path + ".fadeIn").setDef(30));
         int state = configChecker.checkInt(new ConfigNumberParams<Integer>(section, path + ".state").setDef(60));
         int fadeOut = configChecker.checkInt(new ConfigNumberParams<Integer>(section, path + ".fadeOut").setDef(30));
-        boolean enable = section.getBoolean("enable");
+        boolean enable = section.getBoolean(path+".enable");
         return new TextTitle(text, subtext, fadeIn, state, fadeOut, enable);
     }
 

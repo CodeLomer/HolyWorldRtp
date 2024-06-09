@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 public class UpdateChecker {
     private static final Pattern VERSION_PATTERN = Pattern.compile("\"\"tag_name\":\"([^\"]+)\"\"");
-    private static final String CURRENT_VERSION = "1.0.0";
+    private static final String CURRENT_VERSION = "1.0.1";
     private final JavaPlugin plugin;
     private final String githubAuthor;
     private final String repositoryName;

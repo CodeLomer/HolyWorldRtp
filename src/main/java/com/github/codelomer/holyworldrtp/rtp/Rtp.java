@@ -5,10 +5,7 @@ import com.github.codelomer.holyworldrtp.model.RtpParams;
 import com.github.codelomer.holyworldrtp.util.BukkitLogger;
 import com.github.codelomer.holyworldrtp.util.Cooldown;
 import lombok.NonNull;
-import org.bukkit.Bukkit;
-import org.bukkit.Chunk;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -43,7 +40,6 @@ public abstract class Rtp {
             int z = (int) (zCenter + r * Math.sin(theta));
             String coordinateId = x + "," + z;
             if (trushCoordinates.contains(coordinateId)) {
-                System.out.println(coordinateId);
                 continue;
             }
             int y = Objects.requireNonNull(world).getHighestBlockYAt(x, z);
@@ -52,7 +48,8 @@ public abstract class Rtp {
             Bukkit.getScheduler().runTask(plugin, () -> {
                 if (!chunk.isLoaded()) chunk.load();
             });
-            if (rtpParams.blockList().contains(randomLocation.getBlock().getType())) {
+
+            if (rtpParams.blockList().contains(randomLocation.getBlock().getType()) || !world.getWorldBorder().isInside(randomLocation)) {
                 trushCoordinates.add(coordinateId);
                 continue;
             }

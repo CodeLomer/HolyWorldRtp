@@ -4,6 +4,7 @@ import com.github.codelomer.holyworldrtp.command.RtpCMD;
 import com.github.codelomer.holyworldrtp.factory.APIFactory;
 import com.github.codelomer.holyworldrtp.factory.ConfigFactory;
 import com.github.codelomer.holyworldrtp.util.BukkitUtilities;
+import com.github.codelomer.holyworldrtp.util.Cooldown;
 import lombok.NonNull;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -43,6 +44,7 @@ public final class HolyWorldRtp extends JavaPlugin {
         configFactory.getPlayerRtpConfig().loadConfig();
         configFactory.getCustomRtpConfig().loadConfig();
         configFactory.getBaseRtpConfig().loadConfig();
+        Cooldown.resetAll();
     }
 
     public static HolyWorldRtp getInstance() {

@@ -21,4 +21,8 @@ public final class Cooldown {
         }
         return -1;
     }
+
+    public static void resetAll(){
+        cooldownMap.clear();
+    }
 }
